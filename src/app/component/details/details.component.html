@@ -1,0 +1,25 @@
+
+<h3>Details</h3>
+<table class="table" *ngIf="details && details.option == 'people'">
+    <tr><td><label>Name:</label></td> <td><span>{{details.name}}</span></td></tr>
+    <tr><td><label>height:</label></td> <td><span>{{details.height}}</span></td></tr>
+    <tr><td><label>mass:</label> </td> <td><span>{{details.mass}}</span></td></tr>
+    <tr><td><label>hair_color:</label> </td> <td><span>{{details.hair_color}}</span></td></tr>
+    <tr><td><label>skin_color:</label> </td> <td> <span>{{details.skin_color}}</span></td></tr>
+    <tr><td><label>eye_color:</label> </td> <td><span>{{details.eye_color}}</span></td></tr>
+    <tr><td><label>birth_year:</label> </td> <td><span>{{details.birth_year}}</span></td></tr>
+    <tr><td><label>gender:</label> </td> <td> <span>{{details.gender}}</span></td></tr>
+</table>
+ <table class="table" *ngIf="details && details.option == 'starships'">
+    <tr><td><label>name:</label> </td> <td><span>{{details.name}}</span></td></tr>
+    <tr><td><label>model:</label> </td> <td><span>{{details.model}}</span></td></tr>
+    <tr><td><label>max_atmosphering_speed:</label> </td> <td><span>{{details.max_atmosphering_speed}}</span></td></tr>
+    <tr><td><label>manufacturer:</label> </td> <td><span>{{details.manufacturer}}</span></td></tr>
+    <tr><td><label>crew:</label> </td> <td><span>{{details.crew}}</span></td></tr>
+    <tr><td><label>passengers:</label> </td> <td><span>{{details.passengers}}</span></td></tr>
+    <tr><td><label>cargo_capacity:</label> </td> <td><span>{{details.cargo_capacity}}</span></td></tr>
+    <tr><td><label>consumables:</label> </td> <td><span>{{details.consumables}}</span></td></tr>
+    <tr><td><label>hyperdrive_rating:</label> </td> <td><span>{{details.hyperdrive_rating}}</span></td></tr>
+    <tr><td><label>MGLT:</label> </td> <td><span>{{details.MGLT}}</span></td></tr>
+    <tr><td><label>starship_class:</label> </td> <td><span>{{details.starship_class}}</span></td></tr>
+ </table>

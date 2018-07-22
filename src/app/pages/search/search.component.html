@@ -1,0 +1,42 @@
+ <div class="container" #mainContainer>
+   <div class="panel">
+    <div class="form-group">
+    
+      <label><h3>Search</h3></label>     
+      <input type="text" class="form-control" [(ngModel)]="searchText" (keyup)="getSearchKey()">
+    
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label class="radio-inline"><input type="radio" name="options" [(ngModel)]="searchOption" value="people" (change)="handleChange()" selected>People </label>
+        <label class="radio-inline"><input type="radio" name="options" [(ngModel)]="searchOption" value="starships" (change)="handleChange()">Starships</label>
+      </div>
+    </div>
+  </div>
+  <div class="" *ngIf = "searchResults != ''">
+    <h3> Results </h3>
+    <table class="table table-hover res-table">
+      <thead>
+        <th><span> Name </span></th> 
+        <th><span>Gender</span></th>
+      </thead>
+      
+      
+      <tr *ngFor = "let result of searchResults" (click) = "getDetails(result)">
+        <td><span>{{result.name}}</span></td>
+        <td *ngIf="searchOption == 'people'"><span> {{result.gender}}</span></td>
+        <td *ngIf="searchOption == 'starships'"><span> {{result.cost_in_credits}}</span></td>
+      </tr>
+      <tr>
+        <td><a *ngIf="prevUrl" (click)="pageCick(prevUrl)">Prev</a></td>
+        <td><a *ngIf="nextUrl" (click)="pageCick(nextUrl)">Next</a></td>
+      </tr>
+    </table>
+    <div  #itemDetails>
+      <app-details [details]="selectedResult"></app-details>
+    </div>
+  </div>
+  <div *ngIf="serviceError">
+    <h1>{{ errorString }}</h1>
+  </div>
+</div>
